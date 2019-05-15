@@ -1,7 +1,7 @@
 from .models import Mrt
 from django import forms
 
-class CreateForm(forms.Form):
+class CreateForm(forms.ModelForm):
     CHOICES = ((Mrt.FILTER_ONE, 'усредняющий фильтр'),
     (Mrt.FILTER_TWO, 'фильтр Гаусса'),
     (Mrt.FILTER_THREE, 'фильтр Винера'),
@@ -11,6 +11,7 @@ class CreateForm(forms.Form):
     image = forms.FileField(label='Картинка')
 
     def __init__(self, *args, **kwargs):
+      
         super(CreateForm, self).__init__(*args, **kwargs)
 
         self.fields['image'].widget.attrs = {

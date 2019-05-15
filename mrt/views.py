@@ -3,8 +3,9 @@ from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
+from .forms import CreateForm
 
-from mrt.models import Mrt
+from .models import Mrt
 from .forms import CreateForm
 
 class MrtList(ListView):
@@ -14,7 +15,7 @@ class MrtList(ListView):
 
 class MrtCreate(CreateView):
     form_class = CreateForm
-    template_name = 'form.html'
+    template_name = 'mrt_new.html'
     model = Mrt
     success_url = reverse_lazy('mrt_list')
 
