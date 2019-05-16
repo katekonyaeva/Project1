@@ -12,7 +12,7 @@ class MrtList(ListView):
     template_name = 'mrt_list.html'
     model = Mrt
     paginate_by = 10
-
+    
 class MrtCreate(CreateView):
     form_class = CreateForm
     template_name = 'mrt_new.html'
@@ -29,3 +29,4 @@ class MrtDelete(DeleteView):
     template_name = 'delete.html'
     model = Mrt
     success_url = reverse_lazy('mrt_list')
+

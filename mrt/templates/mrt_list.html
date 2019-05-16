@@ -36,6 +36,9 @@
                         <li class="active">
                             <a href="/">Страница обработки снимков</a>
                         </li>
+                        <li class="active">
+                                <a href="/new">Страница обработки снимков</a>
+                            </li>
                         <li>
                             <a href="/accounts/login/">Панель администратора</a>
                         </li>
@@ -55,7 +58,7 @@
             <a href="{% url 'login'%}">Войти</a>
             {% endif %}
             {% block content %}{% endblock %}
-        
+            {% include "form.html" %}
         </div>
         <div class="row">
         
